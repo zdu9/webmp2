@@ -3,10 +3,10 @@
     text-align: center;
     position: relative;
     //top: 10%;
-    //left: 30%;
-   margin : auto;
+     //left: 10%;
+   //margin : auto;
    //margin-top: 40px;
-   margin-left: 50px;
+  // margin-left: 50px;
 
 
    //transform: translate(-20%, -20%);
@@ -21,14 +21,15 @@
     text-align: center;
 
 }
-//#bar{
-//  position: relative;
-//  padding: 10px;
-//
-//  border: 1px solid #ccc;
-//  outline: 0;
-//  border-radius: 15px;
-//}
+#bar{
+  position: relative;
+  padding: 10px;
+  margin-left: 40px;
+  margin: auto;
+  border: 1px solid #ccc;
+  outline: 0;
+  border-radius: 15px;
+}
 @-webkit-keyframes fade {
   from {opacity: .4}
   to {opacity: 1}

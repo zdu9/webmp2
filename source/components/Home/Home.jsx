@@ -95,7 +95,7 @@ class Home extends Component {
         this.sortType = this.sortType.bind(this);
 
 
-        this.videoSearch("and");
+       // this.videoSearch("and");
     }
 
 
@@ -241,15 +241,19 @@ class Home extends Component {
                       videos: results,
                   });
                  this.sortonSearch();
-                //console.log('state', this.state.selectedVideo);
             });
     };
 
     onInputChange(term) {
         this.setState({ term });
-        //this.props.onSearchTermChange(term);
-        this.videoSearch(term);
+        if (term===null)
+        {
+            this.state.videos= null;
+            this.state.poster_path=0;
+        }
+        else this.videoSearch(term);
     }
+
     render() {
 
         return(
@@ -263,6 +267,7 @@ class Home extends Component {
                         <input type="text" placeholder="Search..."
                                value={this.state.term}
                                onChange={event => this.onInputChange(event.target.value)}
+                               onKeyDown={event => this.onKeyDown()}
                         />
 
                     </div>
@@ -292,10 +297,7 @@ class Home extends Component {
 
                 </div>
 
-                <VideoList
-
-                    videos={this.state.videos}
-                />
+                {this.state.term ? <VideoList videos={this.state.videos}/> : null}
             </div>
         )
     }

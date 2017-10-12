@@ -263,7 +263,8 @@ class Home extends Component {
                         <h1>TMDB MOVIE SEARCH</h1>
                         <p> </p>
                     </div>
-                    <div className="ui input focus">
+
+                    <div className="ui input" id ="bar">
                         <input type="text" placeholder="Search..."
                                value={this.state.term}
                                onChange={event => this.onInputChange(event.target.value)}
@@ -276,19 +277,20 @@ class Home extends Component {
                         <option  value= "1">Rate</option>
                         <option  value= "0">Popularity</option>
                     </select>
+                    <p> </p>
 
-                    <div className="ui form">
+                    <div className="ui form" id ="order">
                         <div className="inline fields">
                             <div className="field">
                                 <div className="ui radio checkbox">
                                     <input onClick={this.sortVideosAsc} type="radio" name="frequency"  />
-                                    <label >Ascending</label>
+                                    <label ><h3>Ascending</h3></label>
                                 </div>
                             </div>
                             <div className="field">
                                 <div className="ui radio checkbox">
                                     <input onClick={this.sortVideosDes} type="radio" name="frequency" />
-                                    <label >Descending</label>
+                                    <label ><h3>Descending</h3></label>
                                 </div>
                             </div>
 
@@ -296,8 +298,9 @@ class Home extends Component {
                     </div>
 
                 </div>
-
-                {this.state.term ? <VideoList videos={this.state.videos}/> : null}
+                    <div className="List">
+                    {this.state.term ? <VideoList videos={this.state.videos}/> : null}
+                    </div>
             </div>
         )
     }
